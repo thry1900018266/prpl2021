@@ -1,10 +1,12 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "reglog";
-$table = "members";
-$connect = mysql_connect($host,$user,$pass) or die("Gagal konek");
-$pilih_db = mysql_select_db($db) or die("Database tidak ada");
-$cookie_nama = $_COOKIE['nama'];
-?>
+
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "thryarya9";
+$db_name = "thry1900018266";
+
+try {    
+    $db = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+} catch(PDOException $e) {
+    die("Terjadi masalah: " . $e->getMessage());
+}
